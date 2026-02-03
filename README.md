@@ -156,6 +156,45 @@ make help
 
 ---
 
+## 🧩 Utiliser la CLI orchestrate directement (optionnel)
+
+Par défaut, toutes les commandes Orchestrate sont accessibles via `make`.
+Il est toutefois possible d'utiliser la CLI `orchestrate` directement dans le terminal, sans passer par `make`.
+
+### Générer un wrapper local orchestrate
+
+Le Makefile permet de créer un wrapper local vers la CLI Orchestrate installée dans le virtualenv :
+
+```bash
+make bin-orchestrate
+```
+
+Cette commande crée le binaire suivant :
+
+```
+./bin/orchestrate
+```
+
+Il pointe automatiquement vers :
+
+```
+./venv/bin/orchestrate
+```
+
+### Activer le wrapper dans le terminal courant
+
+Pour pouvoir utiliser `orchestrate` directement depuis le terminal, exécutez :
+
+```bash
+eval "$(make use)"
+```
+
+Cette commande :
+- Ajoute `./bin` au PATH uniquement pour le terminal courant
+- Ne modifie pas votre configuration shell globale
+
+---
+
 ## 🛠️ Personnalisation de l'installation
 
 Le comportement de l'installation Orchestrate ADK est contrôlé directement dans le [`Makefile`](template_projet/Makefile).
