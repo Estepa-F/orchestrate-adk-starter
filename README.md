@@ -30,6 +30,7 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 
 - Un compte IBM watsonx avec accès à Orchestrate
 - Python 3.12 installé et accessible dans le PATH
+- Aucune installation manuelle de Docker n’est requise : Orchestrate ADK gère les dépendances nécessaires automatiquement.
 
 ### Installation
 
@@ -192,6 +193,7 @@ eval "$(make use)"
 Cette commande :
 - Ajoute `./bin` au PATH uniquement pour le terminal courant
 - Ne modifie pas votre configuration shell globale
+- Le PATH est modifié uniquement pour le terminal courant (à refaire dans chaque nouveau terminal).
 
 ---
 
