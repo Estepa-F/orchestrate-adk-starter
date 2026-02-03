@@ -15,7 +15,6 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 │   └── .env.example   # Exemple de configuration
 ├── .env.sdk           # Configuration locale (avec placeholders à compléter)
 ├── .gitignore         # Fichiers à ignorer par Git
-├── workspace_config.yaml  # Configuration de l'espace de travail
 └── README.md          # mode d'emploi.
 ```
 

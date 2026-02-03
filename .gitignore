@@ -2,6 +2,9 @@
 .env*
 !.env.example
 
+# Workspace configuration
+workspace_config.yaml
+
 # macOS files
 .DS_Store
 .DS_Store?
