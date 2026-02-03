@@ -1,6 +1,6 @@
 # watsonx Orchestrate ADK – Starter Folder
 
-Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt à l'emploi, basé sur un [`Makefile`](template_projet/Makefile) unique et un fichier [`.env.sdk`](.env.sdk) local.
+Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt à l'emploi, basé sur un [`Makefile`](template_projet/Makefile) unique et un fichier [`.env.sdk`](template_projet/.env.sdk) local.
 
 **Objectif** : permettre à n'importe qui de partir de zéro et de lancer Orchestrate ADK localement avec une seule commande.
 
@@ -12,8 +12,7 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 .
 ├── template_projet/
 │   ├── Makefile       # Automatisation des commandes ADK
-│   └── .env.example   # Exemple de configuration
-├── .env.sdk           # Configuration locale (avec placeholders à compléter)
+│   └── .env.sdk       # Configuration locale (avec placeholders à compléter)
 ├── .gitignore         # Fichiers à ignorer par Git
 └── README.md          # mode d'emploi.
 ```
@@ -21,8 +20,7 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 ### Fichiers principaux
 
 - **[`Makefile`](template_projet/Makefile)** : automatise l'installation, le serveur local, le chat, le copilot, le déploiement et le diagnostic
-- **[`.env.sdk`](.env.sdk)** : configuration locale avec placeholders à compléter (clés API, URLs, etc.)
-- **[`.env.example`](template_projet/.env.example)** : modèle de configuration pour référence
+- **[`.env.sdk`](template_projet/.env.sdk)** : configuration locale avec placeholders à compléter (clés API, URLs, etc.)
 
 
 ---
