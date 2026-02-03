@@ -22,7 +22,6 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 - **[`Makefile`](Makefile)** : automatise l'installation, le serveur local, le chat, le copilot, le déploiement et le diagnostic
 - **[`.env.sdk`](.env.sdk)** : configuration locale avec placeholders à compléter (clés API, URLs, etc.)
 - **[`.env.example`](.env.example)** : modèle de configuration pour référence
-- **[`workspace_config.yaml`](workspace_config.yaml)** : configuration de l'espace de travail ADK
 
 ---
 
