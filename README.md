@@ -2,7 +2,7 @@
 
 Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt à l'emploi, basé sur un [`Makefile`](template_projet/Makefile) unique et un fichier [`.env.sdk`](template_projet/.env.sdk) local.
 
-**Objectif** : permettre à n'importe qui de partir de zéro et de lancer Orchestrate ADK localement avec une seule commande.
+**Objectif** : permettre à n’importe qui de partir de zéro, configurer son environnement, et lancer Orchestrate ADK localement avec une seule commande (`make bootstrap`), tout en simplifiant l’usage via des raccourcis `make`.
 
 ---
 
@@ -19,9 +19,8 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 
 ### Fichiers principaux
 
-- **[`Makefile`](template_projet/Makefile)** : automatise l'installation, le serveur local, le chat, le copilot, le déploiement et le diagnostic
+- **[`Makefile`](template_projet/Makefile)** : automatise l’installation, le serveur local, le chat, le copilot, le déploiement, le diagnostic et le reset
 - **[`.env.sdk`](template_projet/.env.sdk)** : configuration locale avec placeholders à compléter (clés API, URLs, etc.)
-
 
 ---
 
@@ -36,29 +35,47 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 
 1. **Cloner ou télécharger ce dossier**
 
-- Copie ou télécharge ce dossier
-- Renomme le dossier avec le nom de ton projet
+   - Copie ou télécharge ce dossier
+   - Renomme le dossier avec le nom de ton projet
 
    ```bash
-    orchestrate-adk-starter → my-project
+   orchestrate-adk-starter → my-project
+   ```
+   
+   - Placez-vous ensuite dans le dossier du projet
+
+   ```bash
+   cd my-project
    ```
 
 2. **Configurer les variables d'environnement**
    
-   Ouvrez le fichier [`template_projet/.env.example`](template_projet/.env.example) et complétez les placeholders avec vos informations et renommer le fichier par ".env.sdk":
+   Ouvrez le fichier [`template_projet/.env.sdk`](template_projet/.env.sdk) et complétez les placeholders avec vos informations:
    
    ```bash
    # Exemple de variables à configurer
-   WATSONX_API_KEY=votre_clé_api
-   WATSONX_URL=https://votre-instance.watsonx.cloud.ibm.com
-   # ... autres variables selon vos besoins
+   WO_DEVELOPER_EDITION_SOURCE=orchestrate
+   WO_INSTANCE_ALIAS=...
+   WO_INSTANCE=...
+   WO_API_KEY=...
    ```
+
+   ⚠️ Ce fichier peut contenir des secrets.
+   Il est local uniquement et ne doit jamais être partagé ni versionné.
 
 3. **Installer Orchestrate et commencer le projet**
    
    ```bash
    make bootstrap
    ```
+
+   Cette commande :
+   - Vérifie l'environnement (doctor)
+   - Crée le virtualenv Python
+   - Installe watsonx Orchestrate ADK
+   - Initialise la structure du projet
+   - Démarre le serveur local
+   - Lance le chat Orchestrate
 
 ---
 
@@ -69,23 +86,14 @@ Le [`Makefile`](template_projet/Makefile) fournit plusieurs commandes pour facil
 ### Commandes principales
 
 ```bash
-# Installer les dépendances
-make install
-
-# Démarrer le serveur local
-make server
-
-# Lancer le chat interactif
-make chat
-
-# Lancer le copilot
-make copilot
-
-# Déployer l'application
-make deploy
-
-# Diagnostiquer les problèmes
-make diagnose
+make install      # Installer les dépendances
+make start        # Démarrer le serveur local
+make stop         # Arrêter le serveur
+make logs         # Afficher les logs
+make chat         # Lancer le chat
+make copilot      # Lancer le copilot
+make deploy       # Déployer agents et tools
+make doctor       # Diagnostic de l’environnement
 ```
 
 ### Aide
@@ -102,9 +110,17 @@ make help
 
 ### Fichier .env.sdk
 
-Le fichier [`.env.sdk`](.env.sdk) contient toutes les variables d'environnement nécessaires au fonctionnement de l'ADK. Assurez-vous de compléter tous les placeholders avant de lancer les commandes.
+Le fichier [`.env.sdk`](template_projet/.env.sdk) contient toutes les variables d'environnement nécessaires au fonctionnement de l'ADK. Assurez-vous de compléter tous les placeholders avant de lancer les commandes.
 
-**Important** : Ne commitez jamais vos clés API réelles dans Git. Le fichier [`.gitignore`](.gitignore) est configuré pour ignorer [`.env.sdk`](.env.sdk).
+**Important** : Ne commitez jamais vos clés API réelles dans Git. Le fichier [`.gitignore`](.gitignore) est configuré pour ignorer les fichiers `.env.sdk`.
+
+---
+
+## 🔐 Sécurité
+
+- `.env.sdk` contient des informations sensibles
+- Il est ignoré par Git via `.gitignore`
+- Ne partagez jamais ce fichier
 
 ---
 
@@ -132,9 +148,9 @@ Ce projet est fourni tel quel, sans garantie. Consultez les conditions d'utilisa
 
 Pour toute question ou problème :
 
-1. Vérifiez la configuration dans [`.env.sdk`](.env.sdk)
-2. Lancez `make diagnose` pour identifier les problèmes
-3. Consultez la documentation officielle IBM watsonx
+1. Vérifiez la configuration dans [`.env.sdk`](template_projet/.env.sdk)
+2. Lancez `make doctor` pour diagnostiquer l'environnement
+3. Consultez la documentation officielle IBM watsonx Orchestrate
 4. Contactez le support IBM si nécessaire
 
 ---
