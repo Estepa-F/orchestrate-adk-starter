@@ -22,13 +22,15 @@ ORCH := $(VENVDIR_CLEAN)/bin/orchestrate
 
 PYTEST := $(PY) -m pytest
 
+# Small delay between CLI list calls (avoid rate/ordering issues)
 SLEEP ?= sleep 1
+
 LOGS_POLL ?= 2
 
 # Try to include env file if present (do not fail if missing)
 -include $(ENV_FILE)
 
-# Use WO_INSTANCE_ALIAS if specified
+# Name of the orchestrate CLI environment for SaaS (default: wxo-saas)
 ifdef WO_INSTANCE_ALIAS
 	WXO_SAAS_ENV := $(WO_INSTANCE_ALIAS)
 else
@@ -259,6 +261,8 @@ use:
 # -----------------------------
 # Local server
 # -----------------------------
+# Save UI endpoints detected in startup logs to endpoints.ui.log (best-effort)
+
 .PHONY: server_start start
 server_start: _require_orch _require_env
 	@echo "Starting local server (if not already running)"; \
@@ -379,7 +383,11 @@ init-structure:
 		connections \
 		knowledge-bases \
 		toolkits \
-		models
+		models \
+		scripts \
+		tests \
+		assets \
+		sandbox
 	@echo "✅ Folder structure created (or already exists)"
 
 # -----------------------------
