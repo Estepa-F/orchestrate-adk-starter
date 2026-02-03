@@ -95,9 +95,60 @@ make deploy       # Déployer agents et tools
 make doctor       # Diagnostic de l’environnement
 ```
 
+### 🧰 Commandes avancées (optionnel)
+
+Les commandes ci-dessous sont utiles pour la maintenance, le diagnostic avancé ou des cas d'usage spécifiques.
+Elles ne sont pas nécessaires pour un premier démarrage.
+
+#### Maintenance et cycle de vie
+
+```bash
+make upgrade        # Met à jour ibm-watsonx-orchestrate vers la version WXO_VERSION
+make cleanup        # Supprime le virtualenv (venv/)
+make reinstall      # Stop le serveur (si nécessaire), supprime le venv, puis réinstalle tout
+```
+
+#### Serveur local & debug
+
+```bash
+make status         # Vérifie l'état du serveur local (best-effort)
+make logs-follow    # Affiche les logs du serveur en continu (polling)
+make restart        # Redémarre le serveur local
+```
+
+#### Projet et développement
+
+```bash
+make init-structure # Crée la structure du projet (agents, tools, connections, etc.)
+make list           # Liste les connections, tools et agents déployés
+make connections    # Déploie les connections (nécessite scripts/)
+make test           # Lance les tests (pytest)
+make print-env      # Affiche certaines variables d'environnement (debug)
+```
+
+### 🌐 Environnements SaaS (optionnel)
+
+Ces commandes sont utiles uniquement si vous interagissez avec un environnement SaaS watsonx Orchestrate.
+
+```bash
+make register_saas  # Enregistre un environnement SaaS (WO_INSTANCE requis)
+make activate_saas  # Active l'environnement SaaS (WO_API_KEY requis)
+make activate_local # Repasse sur l'environnement local
+```
+
+### ⚠️ Commandes destructrices
+
+Ces commandes modifient ou suppriment l'environnement local.
+Une confirmation explicite est requise.
+
+```bash
+make reset CONFIRM=YES   # Reset du serveur local (peut supprimer des données locales)
+make purge CONFIRM=YES   # Suppression complète de la VM et de toutes les données locales
+```
+
 ### Commande d'aide
 
-Pour voir toutes les commandes disponibles :
+👉 **Conseil** : utilisez `make help` pour afficher à tout moment la liste complète des commandes disponibles.
 
 ```bash
 make help
@@ -196,4 +247,4 @@ Pour toute question ou problème :
 
 ---
 
-**Bonne utilisation de watsonx Orchestrate ADK ! 🎉**
+**Vous pouvez maintenant développer et itérer sur votre projet Orchestrate ADK ! 🎉**
