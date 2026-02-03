@@ -1,6 +1,6 @@
 # watsonx Orchestrate ADK – Starter Folder
 
-Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt à l'emploi, basé sur un [`Makefile`](Makefile) unique et un fichier [`.env.sdk`](.env.sdk) local.
+Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt à l'emploi, basé sur un [`Makefile`](template_projet/Makefile) unique et un fichier [`.env.sdk`](.env.sdk) local.
 
 **Objectif** : permettre à n'importe qui de partir de zéro et de lancer Orchestrate ADK localement avec une seule commande.
 
@@ -10,18 +10,21 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 
 ```
 .
-├── Makefile           # Automatisation des commandes ADK
+├── template_projet/
+│   ├── Makefile       # Automatisation des commandes ADK
+│   └── .env.example   # Exemple de configuration
 ├── .env.sdk           # Configuration locale (avec placeholders à compléter)
-├── .env.example       # Exemple de configuration
 ├── .gitignore         # Fichiers à ignorer par Git
-└── README.md          # mode d’emploi.
+├── workspace_config.yaml  # Configuration de l'espace de travail
+└── README.md          # mode d'emploi.
 ```
 
 ### Fichiers principaux
 
-- **[`Makefile`](Makefile)** : automatise l'installation, le serveur local, le chat, le copilot, le déploiement et le diagnostic
+- **[`Makefile`](template_projet/Makefile)** : automatise l'installation, le serveur local, le chat, le copilot, le déploiement et le diagnostic
 - **[`.env.sdk`](.env.sdk)** : configuration locale avec placeholders à compléter (clés API, URLs, etc.)
-- **[`.env.example`](.env.example)** : modèle de configuration pour référence
+- **[`.env.example`](template_projet/.env.example)** : modèle de configuration pour référence
+
 
 ---
 
@@ -45,7 +48,7 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 
 2. **Configurer les variables d'environnement**
    
-   Ouvrez le fichier [`.env.example`](.env.example) et complétez les placeholders avec vos informations et renommer le fichier par ".env.sdk":
+   Ouvrez le fichier [`template_projet/.env.example`](template_projet/.env.example) et complétez les placeholders avec vos informations et renommer le fichier par ".env.sdk":
    
    ```bash
    # Exemple de variables à configurer
@@ -64,7 +67,7 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 
 ## 📋 Commandes disponibles
 
-Le [`Makefile`](Makefile) fournit plusieurs commandes pour faciliter le développement :
+Le [`Makefile`](template_projet/Makefile) fournit plusieurs commandes pour faciliter le développement :
 
 ### Commandes principales
 
