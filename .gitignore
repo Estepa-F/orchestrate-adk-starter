@@ -1,6 +1,7 @@
 # Environment files
 .env*
 !.env.example
+!template_projet/.env.sdk
 
 # Workspace configuration
 workspace_config.yaml
