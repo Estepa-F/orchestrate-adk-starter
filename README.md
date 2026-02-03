@@ -14,7 +14,7 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 │   ├── Makefile       # Automatisation des commandes ADK
 │   └── .env.sdk       # Configuration locale (avec placeholders à compléter)
 ├── .gitignore         # Fichiers à ignorer par Git
-└── README.md          # mode d'emploi
+└── README.md          # Mode d'emploi
 ```
 
 ### Fichiers principaux
@@ -35,8 +35,8 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 
 1. **Cloner ou télécharger ce dossier**
 
-   - Copie ou télécharge ce dossier
-   - Renomme le dossier avec le nom de ton projet
+   - Copiez ou téléchargez ce dossier
+   - Renommez le dossier avec le nom de votre projet
 
    ```bash
    orchestrate-adk-starter → my-project
@@ -50,7 +50,7 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 
 2. **Configurer les variables d'environnement**
    
-   Ouvrez le fichier [`template_projet/.env.sdk`](template_projet/.env.sdk) et complétez les placeholders avec vos informations:
+   Ouvrez le fichier [`template_projet/.env.sdk`](template_projet/.env.sdk) et complétez les placeholders avec vos informations :
    
    ```bash
    # Exemple de variables à configurer
@@ -60,8 +60,7 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
    WO_API_KEY=...
    ```
 
-   ⚠️ Ce fichier peut contenir des secrets.
-   Il est local uniquement et ne doit jamais être partagé ni versionné.
+   ⚠️ **Attention** : Ce fichier peut contenir des secrets. Il est local uniquement et ne doit jamais être partagé ni versionné.
 
 3. **Installer Orchestrate et commencer le projet**
    
@@ -96,7 +95,7 @@ make deploy       # Déployer agents et tools
 make doctor       # Diagnostic de l’environnement
 ```
 
-### Aide
+### Commande d'aide
 
 Pour voir toutes les commandes disponibles :
 
@@ -129,14 +128,14 @@ OPTIONAL_TOOLS ?= --with-langflow
 ### Description des paramètres
 
 **`WXO_VERSION`**
-- Version de `ibm-watsonx-orchestrate` installée dans le virtualenv Python.
+- Version de `ibm-watsonx-orchestrate` installée dans le virtualenv Python
 
 **`OBSERVABILITY_TOOL`**
-- Active les outils d'observabilité lors du démarrage du serveur Orchestrate.
-- Une seule option doit être utilisée à la fois.
+- Active les outils d'observabilité lors du démarrage du serveur Orchestrate
+- Une seule option doit être utilisée à la fois
 
 **`OPTIONAL_TOOLS`**
-- Active des outils optionnels supplémentaires (ex : Langflow, document processing).
+- Active des outils optionnels supplémentaires (ex : Langflow, document processing)
 
 Ces paramètres sont globaux au projet et permettent d'adapter l'environnement sans modifier les commandes `make`.
 
@@ -146,9 +145,12 @@ Ces paramètres sont globaux au projet et permettent d'adapter l'environnement s
 
 ### Fichier .env.sdk
 
-Le fichier [`.env.sdk`](template_projet/.env.sdk) contient toutes les variables d'environnement nécessaires au fonctionnement de l'ADK. Assurez-vous de compléter tous les placeholders avant de lancer les commandes.
+Le fichier [`.env.sdk`](template_projet/.env.sdk) contient toutes les variables d'environnement nécessaires au fonctionnement de l'ADK.
 
-**Important** : Ne commitez jamais vos clés API réelles dans Git. Le fichier [`.gitignore`](.gitignore) est configuré pour ignorer les fichiers `.env.sdk`.
+**Important** :
+- Complétez tous les placeholders avant de lancer les commandes
+- Ne commitez jamais vos clés API réelles dans Git
+- Le fichier [`.gitignore`](.gitignore) est configuré pour ignorer les fichiers `.env.sdk`
 
 ---
 
@@ -170,7 +172,10 @@ Le fichier [`.env.sdk`](template_projet/.env.sdk) contient toutes les variables 
 
 ## 🤝 Contribution
 
-Ce projet est un starter template. N'hésitez pas à l'adapter à vos besoins spécifiques et à partager vos améliorations.
+Ce projet est un starter template. N'hésitez pas à :
+- L'adapter à vos besoins spécifiques
+- Partager vos améliorations
+- Contribuer au projet
 
 ---
 
