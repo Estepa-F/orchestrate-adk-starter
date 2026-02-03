@@ -14,7 +14,7 @@ Ce dossier fournit un environnement de travail **watsonx Orchestrate ADK** prêt
 │   ├── Makefile       # Automatisation des commandes ADK
 │   └── .env.sdk       # Configuration locale (avec placeholders à compléter)
 ├── .gitignore         # Fichiers à ignorer par Git
-└── README.md          # mode d'emploi.
+└── README.md          # mode d'emploi
 ```
 
 ### Fichiers principaux
@@ -103,6 +103,42 @@ Pour voir toutes les commandes disponibles :
 ```bash
 make help
 ```
+
+---
+
+## 🛠️ Personnalisation de l'installation
+
+Le comportement de l'installation Orchestrate ADK est contrôlé directement dans le [`Makefile`](template_projet/Makefile).
+
+Avant de lancer `make bootstrap`, vous pouvez adapter les paramètres suivants selon le type d'installation souhaité :
+
+```make
+WXO_VERSION ?= 2.3.0
+
+OBSERVABILITY_TOOL ?= --with-langfuse
+# Alternatives possibles :
+#   --with-ibm-telemetry
+#   (laisser vide pour désactiver)
+
+OPTIONAL_TOOLS ?= --with-langflow
+# Alternatives possibles :
+#   --with-doc-processing
+#   (laisser vide pour désactiver)
+```
+
+### Description des paramètres
+
+**`WXO_VERSION`**
+- Version de `ibm-watsonx-orchestrate` installée dans le virtualenv Python.
+
+**`OBSERVABILITY_TOOL`**
+- Active les outils d'observabilité lors du démarrage du serveur Orchestrate.
+- Une seule option doit être utilisée à la fois.
+
+**`OPTIONAL_TOOLS`**
+- Active des outils optionnels supplémentaires (ex : Langflow, document processing).
+
+Ces paramètres sont globaux au projet et permettent d'adapter l'environnement sans modifier les commandes `make`.
 
 ---
 
