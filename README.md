@@ -128,7 +128,7 @@ OPTIONAL_TOOLS ?= --with-langflow
 ### Description des paramètres
 
 **`WXO_VERSION`**
-- Version de `ibm-watsonx-orchestrate` installée dans le virtualenv Python
+- Correspond à la version du package Python `ibm-watsonx-orchestrate`
 
 **`OBSERVABILITY_TOOL`**
 - Active les outils d'observabilité lors du démarrage du serveur Orchestrate
