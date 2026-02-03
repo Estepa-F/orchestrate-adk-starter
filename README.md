@@ -120,7 +120,7 @@ Le fichier [`.env.sdk`](template_projet/.env.sdk) contient toutes les variables 
 
 - `.env.sdk` contient des informations sensibles
 - Il est ignoré par Git via `.gitignore`
-- Ne partagez jamais ce fichier
+- Chaque utilisateur gère son propre fichier local
 
 ---
 
